@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <a class="top-link" routerLink="/"
+    ><span>Custom keebs & parts Group Buys</span></a
+  >
+  <span class="toolbar-spacer"></span>
+  <a routerLink="/group-buy"
+    ><button mat-raised-button color="accent">CREATE GROUP BUY</button></a
+  >
+</mat-toolbar>
+<div class="container">
+  <main class="content">
+    <div *ngFor="let gb of groupbuys">
+      <mat-card class="card">
+        <mat-card-title>{{ gb.name }}</mat-card-title>
+        <mat-card-subtitle>{{
+          gb.createdAt.seconds * 1000 | date: "short"
+        }}</mat-card-subtitle>
+        <mat-card-content class="card-content">{{
+          gb.description
+        }}</mat-card-content>
+        <img mat-card-image src="{{ gb.album }}" />
+        <mat-card-actions>
+          <button (click)="handleDelete(gb.id)" mat-button style="color: red;">
+            DELETE
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </main>
+</div>

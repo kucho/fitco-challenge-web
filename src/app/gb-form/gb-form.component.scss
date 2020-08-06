@@ -1,0 +1,33 @@
+.field {
+  display: block;
+}
+
+.price {
+  text-align: right;
+}
+
+.inline-field {
+  max-width: 160px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gb-form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  width: 350px;
+}
+
+.success {
+  background: #d32f2f !important;
+  color: white !important;
+}
+
+.fail {
+  background: #4736a5 !important;
+  color: white !important;
+}

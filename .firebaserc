@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "reto-285421": {
+      "hosting": {
+        "fitco-challenge": [
+          "reto-285421"
+        ]
+      }
+    }
+  }
+}

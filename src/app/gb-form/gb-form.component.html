@@ -1,0 +1,70 @@
+<form (ngSubmit)="addProduct()" class="gb-form">
+  <mat-form-field appearance="outline" floatLabel="always" class="field">
+    <mat-label>Product name</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="TOFU65 PCB"
+      name="name"
+      [(ngModel)]="groupbuy.name"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline" floatLabel="always" class="field">
+    <mat-label>Description</mat-label>
+    <textarea
+      name="description"
+      matInput
+      placeholder="Awesome keeb"
+      [(ngModel)]="groupbuy.description"
+      required
+      rows="5"
+    ></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" floatLabel="always" class="field">
+    <mat-label>Album link</mat-label>
+    <input
+      matInput
+      placeholder="http://yourpicture.com"
+      type="text"
+      name="album"
+      [(ngModel)]="groupbuy.album"
+      required
+    />
+  </mat-form-field>
+
+  <div class="row">
+    <mat-form-field color="accent" appearance="outline" class="inline-field">
+      <mat-label>Release date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        name="releaseDate"
+        [min]="minDate"
+        [(ngModel)]="groupbuy.releaseDate"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inline-field">
+      <mat-label>Price</mat-label>
+      <input
+        matInput
+        class="price"
+        type="number"
+        name="price"
+        [(ngModel)]="groupbuy.price"
+        required
+        min="0"
+      />
+      <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">
+    Guardar
+  </button>
+</form>
